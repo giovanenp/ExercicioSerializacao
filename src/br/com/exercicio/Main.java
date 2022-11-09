@@ -10,6 +10,8 @@ public class Main {
     path = "./src/br/com/exercicio/SobreNomes.txt";
     NomeCompleto.lerSobreNome(path);
 
-    NomeCompleto.unirNome();
+    path = "./src/br/com/exercicio/NomeSobrenome.txt";
+    NomeCompleto.escritor(path);
+    NomeCompleto.lerNomeCompleto(path);
   }
 }

@@ -1,7 +1,9 @@
 package br.com.exercicio;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class NomeCompleto {
@@ -24,9 +26,19 @@ public class NomeCompleto {
     bufferReader.close();
   }
 
-  public static void unirNome() {
+  public static void escritor(String path) throws IOException {
+    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path));
     for (int i = 0; i < 10; i++) {
-      System.out.println(nome[i] + " " + sobreNome[i]);
+      bufferedWriter.append(nome[i] + " " + sobreNome[i] + "\n");
     }
+    bufferedWriter.close();
+  }
+
+  public static void lerNomeCompleto(String path) throws IOException {
+    BufferedReader bufferReader = new BufferedReader(new FileReader(path));
+    for (int i = 0; i < 10; i++) {
+      System.out.println(bufferReader.readLine());
+    }
+    bufferReader.close();
   }
 }
